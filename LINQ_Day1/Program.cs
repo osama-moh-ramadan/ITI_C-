@@ -110,6 +110,78 @@ namespace LINQ_Day1
             }
             Console.WriteLine("=======================================");
             Console.WriteLine("-----------------part 7-------------");
+            var allSkills = students.SelectMany(s => s.Skills).Distinct();
+
+            Console.WriteLine("===== All Distinct Skills =====");
+
+            foreach (var skill in allSkills)
+            {
+                Console.WriteLine(skill);
+            }
+
+            System.Console.WriteLine("==========================================");
+            System.Console.WriteLine("-----------part 8------------------------");
+            //count use:
+            int totalStudents = students.Count();
+            Console.WriteLine($"Total Students: {totalStudents}");
+            // Average use;
+            double averagePercentage1 = students.Average(s => s.Percentage);
+
+            Console.WriteLine($"Average Percentage: {averagePercentage1:F2}%");
+            // Highest percentage
+            double highestPercentage = students.Max(s => s.Percentage);
+
+            Console.WriteLine($"Highest Percentage: {highestPercentage}%");
+            // Lowest percentage
+            double lowestPercentage = students.Min(s => s.Percentage);
+
+            Console.WriteLine($"Lowest Percentage: {lowestPercentage}%");
+            // maxby
+            var topStudent = students.MaxBy(s => s.Percentage);
+
+            Console.WriteLine($"Top Student: {topStudent.Name} - {topStudent.Percentage}%");
+            //minby
+            var lowestStudent = students.MinBy(s => s.Percentage);
+
+            Console.WriteLine($"Lowest Student: {lowestStudent.Name} - {lowestStudent.Percentage}%");
+            System.Console.WriteLine("============================================");
+            System.Console.WriteLine("--------part 9--------------");
+            Console.WriteLine("===== Passed Students =====");
+            var passedStudents = students.Where(s => s.Percentage >= 60);
+            foreach (var studentt in passedStudents)
+            {
+                Console.WriteLine($"{studentt.Name} - {studentt.Percentage}%");
+            }
+
+            int totalPassedStudents = passedStudents.Count();
+            Console.WriteLine($"Total Passed Students: {totalPassedStudents}");
+            bool allPassed = students.All(s => s.Percentage >= 60);
+            Console.WriteLine($"Are all students passed? {allPassed}");
+            bool hasStudentAbove95 = students.Any(s => s.Percentage > 95);
+            Console.WriteLine($"Is there any student with percentage greater than 95%? {hasStudentAbove95}");
+            System.Console.WriteLine("=================================");
+            System.Console.WriteLine("--------part 10-------");
+            Console.Write("Enter department: ");
+            string department = Console.ReadLine();
+            var departmentStudents = students.Where(s => s.Department.Equals(department, StringComparison.OrdinalIgnoreCase)).OrderByDescending(s => s.Percentage);
+            Console.WriteLine($"===== {department} Students =====");
+            foreach (var studentt in departmentStudents)
+            {
+                Console.WriteLine($"{studentt.Name} - {studentt.Percentage}%");
+            }
+
+            System.Console.WriteLine("====================================");
+            System.Console.WriteLine("-----------part 11-----------");
+            Console.Write("Enter skill: ");
+            string skills = Console.ReadLine();
+            var studentsWithSkill = students.Where(s => s.Skills.Any(x => x.Equals(skills, StringComparison.OrdinalIgnoreCase)));
+            Console.WriteLine($"===== Students With {skills} Skill =====");
+            foreach (var studentt in studentsWithSkill)
+            {
+                Console.WriteLine(studentt.Name);
+            }
+
+            System.Console.WriteLine("=====================================");
 
         }
     }
