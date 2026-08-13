@@ -1,0 +1,7 @@
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\bin\Debug\LINQ_Day1.exe.config
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\bin\Debug\LINQ_Day1.exe
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\bin\Debug\LINQ_Day1.pdb
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\obj\Debug\LINQ_Day1.csproj.AssemblyReference.cache
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\obj\Debug\LINQ_Day1.csproj.CoreCompileInputs.cache
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\obj\Debug\LINQ_Day1.exe
+C:\Users\osama\source\repos\ITI_C#\LINQ_Day1\obj\Debug\LINQ_Day1.pdb
